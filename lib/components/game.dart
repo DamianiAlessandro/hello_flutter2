@@ -24,6 +24,7 @@ class _GameState extends State<Game> {
 
   @override
   void initState() {
+    super.initState();
     setState(() {
       _stars = MathUtils.random(1, 9);
       _availableNums = MathUtils.range(1, 9);
@@ -37,6 +38,8 @@ class _GameState extends State<Game> {
               : 'active';
       timerCallBack();
     });
+
+
   }
 
   startNewGame() {

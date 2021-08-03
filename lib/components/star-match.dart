@@ -8,11 +8,9 @@ class StartMatch extends StatefulWidget {
 }
 
 class _StartMatchState extends State<StartMatch> {
-  int _gameId = 1;
 
   startNewGame() {
     setState(() {
-      _gameId++;
     });
   }
   @override

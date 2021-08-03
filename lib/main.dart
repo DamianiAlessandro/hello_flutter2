@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/components/stars-display.dart';
 import 'package:hello_flutter2/screens/first.dart';
 import 'package:hello_flutter2/screens/second.dart';
 import 'package:hello_flutter2/services/camera-settings.dart';
 
 import 'package:provider/provider.dart';
-import 'components/game.dart';
 
 void main() {
   runApp(MyApp());

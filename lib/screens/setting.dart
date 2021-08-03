@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter2/components/skeleton-scaffold.dart';
 import 'package:hello_flutter2/services/camera-settings.dart';
 import 'package:camera/camera.dart';
 import 'package:provider/provider.dart';
@@ -11,16 +12,20 @@ class Setting extends StatelessWidget {
 
     return Consumer<CameraSettings>(
       builder: (context, cameraSett, _) {
-        return Scaffold(
-            body: Column(
-              children: [
-                SizedBox(height: 10),
-                Container(
-                    child: listCameraPopup(cameraSett)
-                )
-              ],
-            )
-        );
+        return SkeletonScaffold(
+            title: 'Setting Page',
+            body: Center(
+              // Center is a layout widget. It takes a single child and positions it
+              // in the middle of the parent.
+              child: Center(
+                child: Column(
+                  children: [
+                    Text(cameraSett.cameraSelected.toString()),
+                    listCameraPopup(cameraSett)
+                  ],
+                ),
+              ),
+            ));
       }
     );
 

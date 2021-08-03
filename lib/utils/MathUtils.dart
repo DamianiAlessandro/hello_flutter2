@@ -4,7 +4,7 @@ class MathUtils {
   // i'm forced to use static otherwise i cannot access to those function from the outside
   // Sum an array
   static int sum (List arr) {
-    if (arr == null || arr.length == 0 ) {
+    if ( arr.length == 0 ) {
       return 0;
     } else {
       return arr.reduce((acc, curr) => acc + curr);
@@ -50,7 +50,7 @@ class MathUtils {
         }
       }
 
-      if (!sums.isEmpty) {
+      if (sums.isNotEmpty) {
         return sums[MathUtils.random(0, sums.length)];
       } else {
         return 0;

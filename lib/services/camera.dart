@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_flutter2/components/user-gallery.dart';
-import 'package:provider/provider.dart';
+// import 'package:hello_flutter2/components/user-gallery.dart';
 import 'package:provider/provider.dart';
 
 import 'camera-settings.dart';
@@ -69,10 +67,12 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     setState(() {
       camera = settingData.cameraSelected;
     });
+    // _initCamera(camera).then((value) => super.didChangeDependencies());
+
 
     // _initCamera(camera).whenComplete(() => super.didChangeDependencies());
 
-
+    super.didChangeDependencies();
 
   }
 
@@ -104,6 +104,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
           // Take the Picture in a try / catch block. If anything goes wrong,
           // catch the error.
           try {
+            this._initCamera(Provider.of<CameraSettings>(context, listen: false).cameraSelected);
+            /*
             // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
@@ -121,6 +123,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
                 ),
               ),
             );
+
+            */
           } catch (e) {
             // If an error occurs, log the error to the console.
             print(e);
